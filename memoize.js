@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.memoize = exports.createCacheKeyFromArgs = void 0;
 var createCacheKeyFromArgs = function (args) {
-    return args.reduce(function (cacheKey, arg) { return (cacheKey += "_".concat(typeof arg === 'object' ? JSON.stringify(args) : "".concat(arg), "_")); }, '');
+    return args.reduce(function (cacheKey, arg) { return (cacheKey += "_".concat("".concat(arg), "_")); }, '');
 };
 exports.createCacheKeyFromArgs = createCacheKeyFromArgs;
 var memoize = function (fn) {

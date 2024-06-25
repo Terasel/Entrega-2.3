@@ -1,5 +1,5 @@
 export const createCacheKeyFromArgs = (args: any[]) =>
-    args.reduce((cacheKey, arg) => (cacheKey += `_${typeof arg === 'object' ? JSON.stringify(args) : `${arg}`}_`), '');
+    args.reduce((cacheKey, arg) => (cacheKey += `_${`${arg}`}_`), '');
 
 export const memoize: (...args: any[]) => any = function(fn) {
     const cache = new Map();

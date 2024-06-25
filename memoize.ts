@@ -1,7 +1,7 @@
 export const createCacheKeyFromArgs = (args: any[]) =>
     args.reduce((cacheKey, arg) => (cacheKey += `_${typeof arg === 'object' ? JSON.stringify(args) : `${arg}`}_`), '');
 
-const memoize: (...args: any[]) => any = function(fn) {
+export const memoize: (...args: any[]) => any = function(fn) {
     const cache = new Map();
   
     return function(this:any) {
@@ -16,5 +16,3 @@ const memoize: (...args: any[]) => any = function(fn) {
       return asyncFn;
     };
   };
-  
-  export default memoize;

@@ -38,13 +38,13 @@ describe('funció memoize', () => {
     it('la funció memoize hauria de guardar el resultat de la funció addMemoize i cridar-la només una vegada', () => {
         expect.assertions(4);
         const addSpy = jest.spyOn(mocks, 'add');
-        const resultOne = addMemoize(5, 5);
-        const resultTwo = addMemoize(5, 5);
-        const resultThree = addMemoize(5, 5);
+        const resultOne = addMemoize(6, 5);
+        const resultTwo = addMemoize(6, 5);
+        const resultThree = addMemoize(6, 5);
 
-        expect(resultOne).toEqual(10);
-        expect(resultTwo).toEqual(10);
-        expect(resultThree).toEqual(10);
+        expect(resultOne).toEqual(11);
+        expect(resultTwo).toEqual(11);
+        expect(resultThree).toEqual(11);
         expect(addSpy).toBeCalledTimes(1);
     });
 

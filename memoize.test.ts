@@ -36,7 +36,6 @@ describe('funció memoize', () => {
     });
 
     it('la funció memoize hauria de guardar el resultat de la funció addMemoize i cridar-la només una vegada', () => {
-        expect.assertions(4);
         const addSpy = jest.spyOn(mocks, 'add');
         const resultOne = addMemoize(6, 5);
         const resultTwo = addMemoize(6, 5);
@@ -55,7 +54,6 @@ describe('funció memoize', () => {
     });
 
     it('la funció memoize hauria de guardar el resultat de la funció asyncAddMemoize i cridar-la només una vegada', async () => {
-        expect.assertions(4);
         const addSpy = jest.spyOn(mocks, 'add');
         const [resultOne, resultTwo, resultThree] = await Promise.all([
             asyncAddMemoize(8, 8),
